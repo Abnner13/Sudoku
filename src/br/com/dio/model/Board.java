@@ -1,11 +1,11 @@
-package br.com.dio.Model;
+package br.com.dio.model;
 
 import java.util.Collection;
 import java.util.List;
 
-import static br.com.dio.Model.GameStatusEnum.COMPLETE;
-import static br.com.dio.Model.GameStatusEnum.INCOMPLETE;
-import static br.com.dio.Model.GameStatusEnum.NON_STARTED;
+import static br.com.dio.model.GameStatusEnum.COMPLETE;
+import static br.com.dio.model.GameStatusEnum.INCOMPLETE;
+import static br.com.dio.model.GameStatusEnum.NON_STARTED;
 import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 
@@ -22,11 +22,13 @@ public class Board {
     }
 
     public GameStatusEnum getStatus(){
-        if (spaces.stream().flatMap(Collection::stream).noneMatch(s -> !s.isFixed() && nonNull(s.getActual()))){
+        if (spaces.stream().flatMap(Collection::stream)
+                .noneMatch(s -> !s.isFixed() && nonNull(s.getActual()))){
             return NON_STARTED;
         }
 
-        return spaces.stream().flatMap(Collection::stream).anyMatch(s -> isNull(s.getActual())) ? INCOMPLETE : COMPLETE;
+        return spaces.stream().flatMap(Collection::stream)
+                .anyMatch(s -> isNull(s.getActual())) ? INCOMPLETE : COMPLETE;
     }
 
     public boolean hasErrors(){
