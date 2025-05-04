@@ -1,4 +1,4 @@
-package br.com.dio.Model;
+package br.com.dio.model;
 
 public class Space {
 
