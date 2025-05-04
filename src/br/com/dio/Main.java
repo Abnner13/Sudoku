@@ -4,10 +4,9 @@ import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
-import br.com.dio.Model.Board;
-import br.com.dio.Model.Space;
+import br.com.dio.model.Board;
+import br.com.dio.model.Space;
 import java.util.stream.Stream;
-import java.util.stream.Collectors;
 
 import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
